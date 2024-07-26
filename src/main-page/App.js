@@ -1,7 +1,8 @@
 import {useEffect, useState, useMemo} from "react";
 import './App.css';
 import Header from "./header";
-import {Router, Route, Routes, BrowserRouter} from "react-router-dom";
+import {Route, Routes, BrowserRouter} from "react-router-dom";
+import FeatureHouse from "./feature-house";
 
 function App() {
     const [allHouses, setAllHouses] = useState([]);
@@ -27,7 +28,7 @@ function App() {
                 <Header subtitle='Providing houses all over the Slovakia!'/>
 
                 <Routes>
-                    <Route path="/"></Route>
+                    <Route path="/" element={<FeatureHouse house={featuredHouse}></FeatureHouse>}></Route>
                 </Routes>
             </div>
         </BrowserRouter>
