@@ -1,7 +1,13 @@
 import './search-result.css'
+import {useNavigate} from "react-router-dom";
 
 const SearchResultsRow = ({house}) => {
-    const setActive = () => {};
+    const navigate = useNavigate();
+
+    const setActive = () => {
+        navigate(`/house/${house.id}`);
+    };
+
     return (
         <tr onClick={setActive}>
             <td>{house.address}</td>
