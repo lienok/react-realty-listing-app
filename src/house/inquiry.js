@@ -1,6 +1,9 @@
-import {useState} from "react";
+import {useState, useRef} from "react";
 
 const Inquiry = () => {
+    const counterRef = useRef(0);
+    const inputRef = useRef(null);
+
     const [contactInfo, setContactInfo] = useState({
         name: '',
         email: '',
@@ -8,6 +11,8 @@ const Inquiry = () => {
     });
 
     const onChange = (e) => {
+        counterRef.current++;
+        inputRef.current.value = ' from Ref' // will change input value, strange behaviour.
         setContactInfo({...contactInfo, [e.target.id]: e.target.value});
     };
 
@@ -21,6 +26,7 @@ const Inquiry = () => {
             <div className='form-group'>
                 <label htmlFor='name'>Name</label>
                 <input
+                    ref={inputRef}
                     type='text'
                     className='form-control'
                     placeholder='Name'

@@ -1,11 +1,10 @@
-import {useEffect, useState, useMemo} from "react";
+import {useEffect, useMemo, useState} from "react";
 import './App.css';
 import Header from "./header";
-import {Route, Routes, BrowserRouter} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import FeatureHouse from "./feature-house";
 import SearchResults from "../search-results";
 import HouseFilter from "./house-filter";
-import House from "../house";
 import HouseFromQuery from "../house/house-from-query";
 
 function App() {
