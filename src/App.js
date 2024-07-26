@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from "./header";
 
 function App() {
   return (
     <div className="container">
-      <Header/>
+      <Header
+          title='Some title'
+          subtitle='Providing houses all over the Slovakia!'/>
     </div>
   );
 }
