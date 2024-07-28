@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# Reality House Listing App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React based web application focused on providing house listings. The app fetches data from a `houses.json` file, which contains information about the houses available.
 
-## Available Scripts
+The app is designed with the following features:
 
-In the project directory, you can run:
+## House Search
+A user can perform a search for houses based on the country. The search results are displayed in a table format with each row representing a house. The table includes details about the house such as the address, price, and the number of likes the house has received.
 
-### `npm start`
+Search is implemented using the React Router's `useParams` for fetching the search paramenter from the URL, and React's `useContext` for accessing the houses data. The `HousesContext` wraps the entire app, and provides the houses data to components that need it.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## House Details
+When a user clicks on a row in the search results, they are directed to the house's detail page. This is handled by the `useNavigate` function from `react-router-dom`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The house's detail page displays more specific information about the house. The details are retrieved based on the `id` of the house, which is passed as a param in the URL.
 
-### `npm test`
+## Featured House
+The homepage of the app showcases a featured house. This house is provided by a `useFeaturedHouse` hook, which retrieves the featured house based on the houses data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+All of these functionalities are packaged into a nice, user-friendly interface that relies on Bootstrap for styling. This app is a great starting point for anyone looking to develop a listing page for realty or even other items.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To get started with this app, follow the scripts provided in the `Available Scripts` section, which outlines procedures for starting the development server, running tests, building for production and more.
